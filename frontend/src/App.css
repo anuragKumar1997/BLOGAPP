@@ -1,0 +1,86 @@
+.login{
+  width: 700px;
+  margin: auto;
+  display: flex;
+flex-direction: column;
+justify-content: center;
+padding: 20px;
+margin-top: 50px;
+gap: 10px;
+}
+.login button{
+  width: 150px;
+  
+  margin:auto;
+}
+
+.form1{
+  width: 700px;
+  margin: auto;
+  display: flex;
+flex-direction: column;
+justify-content: center;
+padding: 20px;
+margin-top: 50px;
+gap: 10px;
+}
+.form1 button{
+  width: 150px;
+  
+  margin:auto;
+}
+
+.formBox form{
+  display: flex;
+  flex-direction: column;
+gap:10px;
+  position: fixed;
+  top:60px;
+left:400px;
+padding:20px;
+text-align :left;
+border-radius: 20px;
+box-shadow :0 0 30px yellow;
+align-items: center;
+background-color: yellowgreen;
+}
+
+.formBox form img{
+  width: 150px;
+  height: 150px;
+}
+.btn-close{
+  position: absolute;
+  right: 10px;
+  top:5px;
+}
+.deleteIcon{
+  position: absolute;
+  cursor: pointer;
+  bottom: 4vw;
+  right: 10px;
+}
+.editIcon{
+  position: absolute;
+  cursor: pointer;
+  bottom: 4vw;
+  right: 40px;
+}
+.formYourPost{
+  position: fixed;
+  background: rgb(0,0,0,0.5);
+  color: whitesmoke;
+  transform: translatex(-5%);
+  top:"100px";
+  
+}
+.setting {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+.setting button{
+  margin-top: 10px;
+
+}
