@@ -16,7 +16,9 @@ let authroutes=require('./routes/authRoutes')
 let postRoutes=require('./routes/postrouter')
 app.use(express.json({limit:"100mb"}))
 
-
+app.get('/',(req,res)=>{
+    res.send('hello i am anurag')
+})
 
 
 // app.use ek middlewere h usmai api/auth/ naam ki api bnaya h
