@@ -80,7 +80,7 @@ else{
       </div>
       <div className='col-10 bg-success'>
       <div className='row d-flex justify-content-center gap-4'>
-{post.map((ele)=>{
+{post?.map((ele)=>{
 
  return <div className="card" style={{width: '16rem'}}>
   <img src={ele.image} className="card-img-top" alt="..." />

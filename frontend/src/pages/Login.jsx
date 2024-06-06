@@ -2,7 +2,7 @@ import React, { useContext, useRef } from 'react'
 import { Form, Link, useNavigate } from 'react-router-dom'
 import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import axios from 'axios'
+// import axios from 'axios'
 import AuthContext from '../context/AuthContext';
 const Login = () => {
 
@@ -19,22 +19,30 @@ e.preventDefault();
         password:passwordRef.current.value,
       }
     console.log(obj)
-    let res =await axios.post('http://localhost:8080/api/auth/login',obj)
-    console.log(res.data)
-
-
-    if(res.data.success){
-      localStorage.setItem('userDetails',JSON.stringify(res.data.user)) //yha userDtails e key h bs koi bhi naam de skte or setitem pre define hota h jb localstorage mai kuch save krte 
+    let res =await fetch('http://localhost:8080/api/auth/login',{
+      method:'POST',
+      headers:{
+        'Content-Type':'application/json'
+      },
+      
+      body:JSON.stringify(obj)
+    
+    })
+    
+    let data=await res.json()
+    console.log(data)
+if(data.success){
+      localStorage.setItem('userDetails',JSON.stringify(data.user)) //yha userDtails e key h bs koi bhi naam de skte or setitem pre define hota h jb localstorage mai kuch save krte 
       store.setuserDetail({
-        name:res.data.user.name,
-        _id:res.data.user._id,
+        name:data.user.name,
+        _id:data.user._id,
         login:true
       })
       navigate('/')
-toast.success(res.data.msg,{position:"top-center",theme:"colored"})
+toast.success(data.msg,{position:"top-center",theme:"colored"})
     }
     else{
-      toast.error(res.data.msg,{position:"top-center",theme:"colored"})
+      toast.error(data.msg,{position:"top-center",theme:"colored"})
     }
 }
 

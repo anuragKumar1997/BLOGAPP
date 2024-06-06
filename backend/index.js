@@ -1,6 +1,6 @@
 const express=require('express')
 const app=express()
-const port=8080
+const port=8080;
 const connectToDb=require('./db')
 connectToDb()
 
@@ -14,7 +14,7 @@ let Auth=require('./models/Auth')
 // yha pe crud k path ko require kia gya h jo authroutes mai k ander h
 let authroutes=require('./routes/authRoutes')
 let postRoutes=require('./routes/postrouter')
-app.use(express.json({limit:"100mb"}))
+app.use(express.json({limit:"50mb"}))
 
 app.get('/',(req,res)=>{
     res.send('hello i am anurag')

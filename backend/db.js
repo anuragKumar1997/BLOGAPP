@@ -7,4 +7,4 @@ const connectToDb=async()=>{
   .catch(() => console.log('error in connecting mongodb server'))
 }
 
-module.exports=connectToDb
+module.exports=connectToDb;
